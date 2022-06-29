@@ -22,10 +22,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(40.0),
-      child: Container(
-        color: Colors.red,
+    return Scaffold(
+      body: Align(
+        alignment: Alignment.bottomRight,
+        child: Container(
+          color: Colors.red,
+          width: 100,
+          height: 100,
+        ),
       ),
     );
   }

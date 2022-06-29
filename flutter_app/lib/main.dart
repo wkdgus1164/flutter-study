@@ -27,8 +27,28 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text('Hello World'),
       ),
-      body: SingleChildScrollView(
-        child: ListBody(children: items.map((e) => Text('$e')).toList()),
+      body: ListView(
+        scrollDirection: Axis.vertical,
+        children: <Widget>[
+          ListTile(
+            leading: const Icon(Icons.home),
+            title: const Text('Home'),
+            trailing: const Icon(Icons.navigate_next),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: const Icon(Icons.event),
+            title: const Text('Event'),
+            trailing: const Icon(Icons.navigate_next),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: const Icon(Icons.camera),
+            title: const Text('Camera'),
+            trailing: const Icon(Icons.navigate_next),
+            onTap: () {},
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
           onPressed: () {

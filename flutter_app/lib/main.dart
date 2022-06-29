@@ -23,24 +23,23 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-        length: 3,
-        child: Scaffold(
-          appBar: AppBar(
-            title: const Text('Tab'),
-            bottom: const TabBar(tabs: <Widget>[
-              Tab(icon: Icon(Icons.tag_faces)),
-              Tab(text: '메뉴 2'),
-              Tab(icon: Icon(Icons.info), text: '메뉴 3')
-            ]),
+    return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
           ),
-          body: TabBarView(
-            children: <Widget>[
-              Container(color: Colors.yellow),
-              Container(color: Colors.green),
-              Container(color: Colors.blue),
-            ],
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
           ),
-        ));
+          BottomNavigationBarItem(
+            icon: Icon(Icons.notifications),
+            label: 'Notification',
+          ),
+        ],
+      ),
+    );
   }
 }

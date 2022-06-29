@@ -27,26 +27,36 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text('Hello World'),
       ),
-      body: ListView(
-        scrollDirection: Axis.vertical,
+      body: GridView.count(
+        crossAxisCount: 2,
         children: <Widget>[
-          ListTile(
-            leading: const Icon(Icons.home),
-            title: const Text('Home'),
-            trailing: const Icon(Icons.navigate_next),
-            onTap: () {},
+          Container(
+            color: Colors.red,
+            width: 100,
+            height: 100,
+            padding: const EdgeInsets.all(8.0),
+            margin: const EdgeInsets.all(8.0),
           ),
-          ListTile(
-            leading: const Icon(Icons.event),
-            title: const Text('Event'),
-            trailing: const Icon(Icons.navigate_next),
-            onTap: () {},
+          Container(
+            color: Colors.blue,
+            width: 100,
+            height: 100,
+            padding: const EdgeInsets.all(8.0),
+            margin: const EdgeInsets.all(8.0),
           ),
-          ListTile(
-            leading: const Icon(Icons.camera),
-            title: const Text('Camera'),
-            trailing: const Icon(Icons.navigate_next),
-            onTap: () {},
+          Container(
+            color: Colors.purple,
+            width: 100,
+            height: 100,
+            padding: const EdgeInsets.all(8.0),
+            margin: const EdgeInsets.all(8.0),
+          ),
+          Container(
+            color: Colors.pink,
+            width: 100,
+            height: 100,
+            padding: const EdgeInsets.all(8.0),
+            margin: const EdgeInsets.all(8.0),
           ),
         ],
       ),

@@ -23,25 +23,24 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Hello World'),
-      ),
-      body: PageView(
-        children: <Widget>[
-          Container(color: Colors.red),
-          Container(color: Colors.blue),
-          Container(color: Colors.green),
-          Container(color: Colors.pink),
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            setState(() {
-              _text += "World";
-            });
-          },
-          child: Icon(Icons.touch_app)),
-    );
+    return DefaultTabController(
+        length: 3,
+        child: Scaffold(
+          appBar: AppBar(
+            title: const Text('Tab'),
+            bottom: const TabBar(tabs: <Widget>[
+              Tab(icon: Icon(Icons.tag_faces)),
+              Tab(text: '메뉴 2'),
+              Tab(icon: Icon(Icons.info), text: '메뉴 3')
+            ]),
+          ),
+          body: TabBarView(
+            children: <Widget>[
+              Container(color: Colors.yellow),
+              Container(color: Colors.green),
+              Container(color: Colors.blue),
+            ],
+          ),
+        ));
   }
 }

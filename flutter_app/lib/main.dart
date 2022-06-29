@@ -18,16 +18,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var _text = '여기에 예제 작성';
   final items = List.generate(100, (index) => index).toList();
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Padding(
+      padding: const EdgeInsets.all(40.0),
       child: Container(
-        color: Colors.blue,
-        width: 100,
-        height: 100,
+        color: Colors.red,
       ),
     );
   }

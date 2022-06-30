@@ -23,11 +23,12 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SizedBox(
-        width: 100,
-        height: 100,
+      body: Card(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        elevation: 4,
         child: Container(
-          color: Colors.red,
+          width: 200,
+          height: 200,
         ),
       ),
     );

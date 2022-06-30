@@ -26,8 +26,10 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text("App"),
       ),
-      body: TextButton(
-        child: const Text("TextButton"),
+      body: IconButton(
+        icon: const Icon(Icons.add),
+        color: Colors.red,
+        iconSize: 100,
         onPressed: () {},
       ),
     );

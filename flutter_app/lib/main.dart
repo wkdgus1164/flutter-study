@@ -26,15 +26,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text("App"),
       ),
-      body: const Text(
-        'Hello World',
-        style: TextStyle(
-            fontSize: 40,
-            fontStyle: FontStyle.italic,
-            fontWeight: FontWeight.bold,
-            color: Colors.red,
-            letterSpacing: 4),
-      ),
+      body: Image.network('http://bit.ly/2Pvz4t8'),
     );
   }
 }

@@ -26,7 +26,9 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text("App"),
       ),
-      body: const CircularProgressIndicator(),
+      body: const CircleAvatar(
+        child: Icon(Icons.person),
+      ),
     );
   }
 }

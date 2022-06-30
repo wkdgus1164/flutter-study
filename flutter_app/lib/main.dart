@@ -23,13 +23,12 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Card(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        elevation: 4,
-        child: Container(
-          width: 200,
-          height: 200,
-        ),
+      appBar: AppBar(
+        title: const Text("App"),
+      ),
+      body: ElevatedButton(
+        child: const Text("RaisedButton"),
+        onPressed: () {},
       ),
     );
   }

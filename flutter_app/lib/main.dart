@@ -23,12 +23,25 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("App"),
-      ),
-      body: const CircleAvatar(
-        child: Icon(Icons.person),
-      ),
-    );
+        appBar: AppBar(
+          title: const Text("App"),
+        ),
+        body: Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const <Widget>[
+            TextField(
+              decoration: InputDecoration(labelText: '여기에 입력하세요'),
+            ),
+            Padding(
+              padding: EdgeInsets.all(20),
+              child: TextField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(), labelText: '여기에 입력하세요'),
+              ),
+            ),
+          ],
+        ));
   }
 }

@@ -18,7 +18,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final items = List.generate(100, (index) => index).toList();
+  var _isChecked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -26,22 +26,30 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: const Text("App"),
         ),
-        body: Column(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: const <Widget>[
-            TextField(
-              decoration: InputDecoration(labelText: '여기에 입력하세요'),
+        body: Padding(
+          padding: const EdgeInsets.all(8),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Checkbox(
+                    value: _isChecked,
+                    onChanged: (value) {
+                      setState(() {
+                        _isChecked = value!;
+                      });
+                    }),
+                const SizedBox(
+                  height: 40,
+                ),
+                Switch(value: _isChecked, onChanged: (value) {
+                  setState(() {
+                    _isChecked = value;
+                  });
+                })
+              ],
             ),
-            Padding(
-              padding: EdgeInsets.all(20),
-              child: TextField(
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(), labelText: '여기에 입력하세요'),
-              ),
-            ),
-          ],
+          ),
         ));
   }
 }

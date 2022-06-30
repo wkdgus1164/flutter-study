@@ -26,7 +26,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text("App"),
       ),
-      body: Image.network('http://bit.ly/2Pvz4t8'),
+      body: const CircularProgressIndicator(),
     );
   }
 }

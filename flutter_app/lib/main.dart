@@ -26,9 +26,14 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text("App"),
       ),
-      body: FloatingActionButton(
-        child: const Icon(Icons.add),
-        onPressed: () {},
+      body: const Text(
+        'Hello World',
+        style: TextStyle(
+            fontSize: 40,
+            fontStyle: FontStyle.italic,
+            fontWeight: FontWeight.bold,
+            color: Colors.red,
+            letterSpacing: 4),
       ),
     );
   }

@@ -26,10 +26,8 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text("App"),
       ),
-      body: IconButton(
-        icon: const Icon(Icons.add),
-        color: Colors.red,
-        iconSize: 100,
+      body: FloatingActionButton(
+        child: const Icon(Icons.add),
         onPressed: () {},
       ),
     );

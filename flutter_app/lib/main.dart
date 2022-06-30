@@ -26,8 +26,8 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text("App"),
       ),
-      body: ElevatedButton(
-        child: const Text("RaisedButton"),
+      body: TextButton(
+        child: const Text("TextButton"),
         onPressed: () {},
       ),
     );

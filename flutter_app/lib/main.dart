@@ -23,22 +23,12 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: <Widget>[
-          Expanded(
-              flex: 2,
-              child: Container(
-                color: Colors.red,
-              )),
-          Expanded(
-              child: Container(
-            color: Colors.green,
-          )),
-          Expanded(
-              child: Container(
-            color: Colors.purple,
-          )),
-        ],
+      body: SizedBox(
+        width: 100,
+        height: 100,
+        child: Container(
+          color: Colors.red,
+        ),
       ),
     );
   }

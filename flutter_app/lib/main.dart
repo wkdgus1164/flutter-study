@@ -17,10 +17,9 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-enum Gender { man, women }
-
 class _MyHomePageState extends State<MyHomePage> {
-  Gender _gender = Gender.man;
+  final _valueList = ['첫 번째', '두 번째', '세 번째'];
+  String _selectedValue = '첫 번째';
 
   @override
   Widget build(BuildContext context) {
@@ -34,53 +33,19 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                ListTile(
-                  title: const Text("남자"),
-                  leading: Radio(
-                    value: Gender.man,
-                    groupValue: _gender,
+                DropdownButton(
+                    value: _selectedValue,
+                    items: _valueList.map(
+                      (value) {
+                        return DropdownMenuItem(
+                            value: value, child: Text(value));
+                      },
+                    ).toList(),
                     onChanged: (value) {
                       setState(() {
-                        _gender = value as Gender;
+                        _selectedValue = value as String;
                       });
-                    },
-                  ),
-                ),
-                ListTile(
-                  title: const Text("여자"),
-                  leading: Radio(
-                    value: Gender.women,
-                    groupValue: _gender,
-                    onChanged: (value) {
-                      setState(() {
-                        _gender = value as Gender;
-                      });
-                    },
-                  ),
-                ),
-                const SizedBox(
-                  height: 40,
-                ),
-                RadioListTile(
-                  title: const Text("남자"),
-                  value: Gender.man,
-                  groupValue: _gender,
-                  onChanged: (value) {
-                    setState(() {
-                      _gender = value as Gender;
-                    });
-                  },
-                ),
-                RadioListTile(
-                  title: const Text("여자"),
-                  value: Gender.women,
-                  groupValue: _gender,
-                  onChanged: (value) {
-                    setState(() {
-                      _gender = value as Gender;
-                    });
-                  },
-                )
+                    })
               ],
             ),
           ),

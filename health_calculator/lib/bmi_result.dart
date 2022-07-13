@@ -20,6 +20,6 @@ class BmiResult extends StatelessWidget {
           ],
         ),
       ),
-    )
+    );
   }
 }

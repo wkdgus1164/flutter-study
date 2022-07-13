@@ -1,11 +1,18 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+
+final dummyItems = [
+  'https://via.placeholder.com/600x400',
+  'https://via.placeholder.com/600x400',
+  'https://via.placeholder.com/600x400',
+];
 
 class Page1 extends StatelessWidget {
   const Page1({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ListView(
       children: <Widget>[_buildTop(), _buildMiddle(), _buildBottom()],
     );
   }
@@ -125,7 +132,21 @@ class Page1 extends StatelessWidget {
   }
 
   Widget _buildMiddle() {
-    return const Text('Middle');
+    return CarouselSlider(
+      options: CarouselOptions(height: 400, autoPlay: true),
+      items: dummyItems.map((url) {
+        return Builder(builder: (BuildContext context) {
+          return Container(
+              width: MediaQuery.of(context).size.width,
+              margin: const EdgeInsets.symmetric(horizontal: 5),
+              decoration: const BoxDecoration(color: Colors.amber),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: Image.network(url, fit: BoxFit.cover),
+              ));
+        });
+      }).toList(),
+    );
   }
 
   Widget _buildBottom() {
